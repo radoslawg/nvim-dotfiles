@@ -46,3 +46,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Navigate to next d
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list", unpack(opts) })
 
+-- Split resizing
+vim.keymap.set("n", "<Right>", "<CMD>vertical resize +2<CR>", { desc = "Increase vertical split size", unpack(opts) })
+vim.keymap.set("n", "<Left>", "<CMD>vertical resize -2<CR>", { desc = "Decrease vertical split size", unpack(opts) })
+vim.keymap.set("n", "<Up>", "<CMD>resize +2<CR>", { desc = "Increase horizontal split size", unpack(opts) })
+vim.keymap.set("n", "<Down>", "<CMD>resize -2<CR>", { desc = "Decrease horizontal split size", unpack(opts) })
+
