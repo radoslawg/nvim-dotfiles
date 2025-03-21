@@ -1,4 +1,4 @@
-return { "folke/which-key.nvim", opts={},  keys = {
+return { "folke/which-key.nvim", opts={}, lazy=false, keys = {
 	{
 		"<leader>?",
 		function()
