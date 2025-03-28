@@ -6,20 +6,12 @@ return { -- Highlight, edit, and navigate code
     opts = {
       ensure_installed = {
         'bash',
-        'c',
-        'diff',
-        'html',
         'lua',
         'luadoc',
         'markdown',
         'markdown_inline',
-        'query',
         'vim',
         'vimdoc',
-        'python',
-        'go',
-        'rust',
-        'json',
         'powershell',
       },
       -- Autoinstall languages that are not installed
