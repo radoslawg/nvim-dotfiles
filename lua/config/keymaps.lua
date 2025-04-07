@@ -1,6 +1,8 @@
 
 local opts = { noremap = true, silent = true }
 
+
+vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Remove highlight", unpack(opts) })
 -- Save file without formatting
 vim.keymap.set("n", "<leader>sw", "<CMD>noautocmd w<CR>", { desc = "Save file without formatting", unpack(opts) })
 
