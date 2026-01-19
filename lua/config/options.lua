@@ -29,9 +29,6 @@ vim.opt.relativenumber = true
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
--- Save undo history
-vim.opt.undofile = true
-
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
@@ -69,8 +66,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.opt.autowrite = true
-vim.opt.autoread = true
+vim.opt.termguicolors = true                       -- Enable 24-bit RGB color in the TUI
 
-vim.opt.termguicolors = true
+vim.opt.autochdir = false                          -- For whatever reason, it makes neovim startup slower
 
+vim.opt.winblend = 10                              -- Transparency for floating windows_color
+vim.opt.pumblend = 5                               -- Transparency for popup menu
+
+vim.opt.backup = true                              -- Enable backup filesystem
+vim.opt.backupdir = vim.fn.expand("~/.vim/backup") -- Set backup directory
+vim.opt.undofile = true                            -- Enable persistent undo
+vim.opt.undodir = vim.fn.expand("~/.vim/undo")     -- Set undo directory
+vim.opt.swapfile = true                            -- Disable swapfile
+vim.opt.directory = vim.fn.expand("~/.vim/swap")   -- Set swap directory
+
+vim.opt.updatetime = 300                           -- Faster completion_item
+vim.opt.timeoutlen = 500                           -- By default timeoutlen is 1000 ms
+vim.opt.autoread = true                            -- Auto reload files changed outside of nvim
+vim.opt.autowrite = true                           -- Auto save before commands like :next and :make
