@@ -1,8 +1,9 @@
-
 local opts = { noremap = true, silent = true }
 
 -- Save file without formatting
 vim.keymap.set("n", "<leader>sw", "<CMD>noautocmd w<CR>", { desc = "Save file without formatting", unpack(opts) })
+-- Save
+vim.keymap.set("n", "<leader>ss", "<CMD>w<CR>", { desc = "Save file", unpack(opts) })
 
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', { desc = "Delete single character without copying into register", unpack(opts) })
@@ -41,8 +42,10 @@ vim.keymap.set("x", "<", "<gv", { desc = "Stay in visual mode after shifting", u
 vim.keymap.set("x", ">", ">gv", { desc = "Stay in visual mode after shifting", unpack(opts) })
 
 -- Diagnostic navigation
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Navigate to previous diagnostic", unpack(opts) })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Navigate to next diagnostic", unpack(opts) })
+vim.keymap.set("n", "g[", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+  { desc = "[G]o to previous diagnostic", unpack(opts) })
+vim.keymap.set("n", "g]", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+  { desc = "[G]o to next diagnostic", unpack(opts) })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list", unpack(opts) })
 
@@ -52,3 +55,18 @@ vim.keymap.set("n", "<Left>", "<CMD>vertical resize -2<CR>", { desc = "Decrease 
 vim.keymap.set("n", "<Up>", "<CMD>resize +2<CR>", { desc = "Increase horizontal split size", unpack(opts) })
 vim.keymap.set("n", "<Down>", "<CMD>resize -2<CR>", { desc = "Decrease horizontal split size", unpack(opts) })
 
+-- LSP
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition", silent = true })
+vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, { desc = "[G]o to type [D]efinition", silent = true })
+vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "[G]o to [I]mplementation", silent = true })
+vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "Code [A]ction", silent = true })
+-- vim.keymap.set("n", "gr", vim.lsp.buf.references, { silent = true })
+-- vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { silent = true })
+-- vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { silent = true })
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename", silent = true })
+-- vim.keymap.set("n", "<leader>e", function () vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
+-- vim.keymap.set("n", "K", function () vim.lsp.buf.hover(floating_options) end, { silent = true })
+
+-- change working directory to the location of the current file
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>",
+  { desc = "Change working directory to the location of the current file", unpack(opts) })
