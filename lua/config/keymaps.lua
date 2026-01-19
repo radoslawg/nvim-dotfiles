@@ -1,6 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Remove highlight", unpack(opts) })
 -- Save file without formatting
 vim.keymap.set("n", "<leader>sw", "<CMD>noautocmd w<CR>", { desc = "Save file without formatting", unpack(opts) })
@@ -24,9 +23,9 @@ vim.keymap.set("n", "<leader>x", "<CMD>bdelete!<CR>", { desc = "Delete buffer", 
 vim.keymap.set("n", "<leader>b", "<CMD>enew<CR>", { desc = "New buffer", unpack(opts) })
 
 -- Window Management
-vim.keymap.set("n", "<leader>v", "<CMD>vsplit<CR>", { desc = "Vertical window split", unpack(opts) })
-vim.keymap.set("n", "<leader>h", "<CMD>split<CR>", { desc = "Horizontal window split", unpack(opts) })
-vim.keymap.set("n", "<leader>q", "<CMD>q<CR>", { desc = "Close window", unpack(opts) })
+vim.keymap.set("n", "<leader>sv", "<CMD>vsplit<CR>", { desc = "[S]plit [V]ertical", unpack(opts) })
+vim.keymap.set("n", "<leader>sh", "<CMD>split<CR>", { desc = "[S]plit [H]orizontal", unpack(opts) })
+vim.keymap.set("n", "<leader>x", "<CMD>q<CR>", { desc = "Close window", unpack(opts) })
 vim.keymap.set("n", "<leader>o", "<CMD>only<CR>", { desc = "Close other windows", unpack(opts) })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Equalize window sizes", unpack(opts) })
 
@@ -44,10 +43,12 @@ vim.keymap.set("x", "<", "<gv", { desc = "Stay in visual mode after shifting", u
 vim.keymap.set("x", ">", ">gv", { desc = "Stay in visual mode after shifting", unpack(opts) })
 
 -- Diagnostic navigation
-vim.keymap.set("n", "g[", function() vim.diagnostic.jump({ count = -1, float = true }) end,
-  { desc = "[G]o to previous diagnostic", unpack(opts) })
-vim.keymap.set("n", "g]", function() vim.diagnostic.jump({ count = -1, float = true }) end,
-  { desc = "[G]o to next diagnostic", unpack(opts) })
+vim.keymap.set("n", "g[", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "[G]o to previous diagnostic", unpack(opts) })
+vim.keymap.set("n", "g]", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "[G]o to next diagnostic", unpack(opts) })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list", unpack(opts) })
 
@@ -68,7 +69,24 @@ vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "Code [A]ction", sil
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename", silent = true })
 -- vim.keymap.set("n", "<leader>e", function () vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
 -- vim.keymap.set("n", "K", function () vim.lsp.buf.hover(floating_options) end, { silent = true })
+vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", silent = true }) -- changed to Ctrl+k to avoid conflict with window navigation
 
 -- change working directory to the location of the current file
-vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>",
-  { desc = "Change working directory to the location of the current file", unpack(opts) })
+vim.keymap.set(
+  "n",
+  "<leader>cd",
+  ":cd %:p:h<CR>:pwd<CR>",
+  { desc = "Change working directory to the location of the current file", unpack(opts) }
+)
+
+vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move line down", unpack(opts) })      -- Move line down
+vim.keymap.set("n", "<A-k>", "<CMD>m .-2<CR>==", { desc = "Move line up", unpack(opts) })        -- Move line up
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", unpack(opts) }) -- Move selection down
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", unpack(opts) })   -- Move selection up
+
+vim.keymap.set("t", "<C-wC>", "<C-\\><C-n><cmd>q<cr>", { desc = "Exit terminae", unpack(opts) })
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode", unpack(opts) })
+vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Navigate to the window on the left", unpack(opts) })  -- Navigate to the window on the left
+vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Navigate to the window below", unpack(opts) })        -- Navigate to the window below
+vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Navigate to the window above", unpack(opts) })        -- Navigate to the window above
+vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Navigate to the window on the right", unpack(opts) }) -- Navigate to the window on the right
