@@ -2,7 +2,6 @@ require("config.lazy")
 require("config.keymaps")
 require("config.lsp")
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme catppuccin-mocha]])
 
 local backupdir = vim.fn.expand("~/.vim/backup/")
 local undodir = vim.fn.expand("~/.vim/undo/")
@@ -16,3 +15,5 @@ end
 if vim.fn.isdirectory(backupdir) == 0 then
   vim.fn.mkdir(backupdir, "p")
 end
+
+vim.cmd([[colorscheme rose-pine-moon]])

@@ -4,12 +4,12 @@ vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Remove highlight",
 -- Save file without formatting
 vim.keymap.set("n", "<leader>sw", "<CMD>noautocmd w<CR>", { desc = "Save file without formatting", unpack(opts) })
 -- Save
-vim.keymap.set("n", "<leader>ss", "<CMD>w<CR>", { desc = "Save file", unpack(opts) })
+vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save file", unpack(opts) })
 
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', { desc = "Delete single character without copying into register", unpack(opts) })
 
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory in Oil", unpack(opts) })
+vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "[e]xplore files in Oil", unpack(opts) })
 
 vim.keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open new tab", unpack(opts) })
 vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab", unpack(opts) })
@@ -44,7 +44,7 @@ vim.keymap.set("x", ">", ">gv", { desc = "Stay in visual mode after shifting", u
 
 -- Diagnostic navigation
 vim.keymap.set("n", "g[", function()
-  vim.diagnostic.jump({ count = -1, float = true })
+  vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "[G]o to previous diagnostic", unpack(opts) })
 vim.keymap.set("n", "g]", function()
   vim.diagnostic.jump({ count = -1, float = true })
@@ -70,6 +70,9 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename", silent =
 -- vim.keymap.set("n", "<leader>e", function () vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
 -- vim.keymap.set("n", "K", function () vim.lsp.buf.hover(floating_options) end, { silent = true })
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", silent = true }) -- changed to Ctrl+k to avoid conflict with window navigation
+vim.keymap.set("n", "<leader>f", function()
+  vim.lsp.buf.format({ async = true })
+end, { desc = "Format file", silent = true }) -- format file
 
 -- change working directory to the location of the current file
 vim.keymap.set(
@@ -90,3 +93,7 @@ vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Navigate to the wi
 vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Navigate to the window below", unpack(opts) })        -- Navigate to the window below
 vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Navigate to the window above", unpack(opts) })        -- Navigate to the window above
 vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Navigate to the window on the right", unpack(opts) }) -- Navigate to the window on the right
+
+-- Yank and delete to system clipboard.
+vim.keymap.set({ "n", "v" }, "<leader>yc", '"+y', { desc = "[y]ank to system [c]lipboard", unpack(opts) })
+vim.keymap.set({ "n", "v" }, "<leader>dc", '"+d', { desc = "[d]elete to system [c]lipboard", unpack(opts) })

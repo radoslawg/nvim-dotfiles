@@ -1,11 +1,23 @@
 return {
-  'stevearc/oil.nvim',
+  "stevearc/oil.nvim",
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
-  view_options = {
-    show_hidden = true,
-  }
+    columns = {
+      "icon",
+      "permissions",
+      "size",
+      "mtime",
+    },
+    view_options = {
+      show_hidden = true,
+    },
+    skip_confirm_for_simple_edits = true,
+    float = {
+      border = "rounded",
+      max_width = 0.6,
+      max_height = 0.7,
+    },
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
