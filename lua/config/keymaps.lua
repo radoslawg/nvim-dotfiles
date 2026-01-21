@@ -30,10 +30,10 @@ vim.keymap.set("n", "<leader>o", "<CMD>only<CR>", { desc = "Close other windows"
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Equalize window sizes", unpack(opts) })
 
 -- Navigating between windows
-vim.keymap.set({ "n", "t", "c" }, "<leader>h", "<C-w>h", { desc = "Navigate to the window on the left", unpack(opts) })
-vim.keymap.set({ "n", "t", "c" }, "<leader>j", "<C-w>j", { desc = "Navigate to the window below", unpack(opts) })
-vim.keymap.set({ "n", "t", "c" }, "<leader>k", "<C-w>k", { desc = "Navigate to the window above", unpack(opts) })
-vim.keymap.set({ "n", "t", "c" }, "<leader>l", "<C-w>l", { desc = "Navigate to the window on the right", unpack(opts) })
+vim.keymap.set({ "n", }, "<leader>h", "<C-w>h", { desc = "Navigate to the window on the left", unpack(opts) })
+vim.keymap.set({ "n", }, "<leader>j", "<C-w>j", { desc = "Navigate to the window below", unpack(opts) })
+vim.keymap.set({ "n", }, "<leader>k", "<C-w>k", { desc = "Navigate to the window above", unpack(opts) })
+vim.keymap.set({ "n", }, "<leader>l", "<C-w>l", { desc = "Navigate to the window on the right", unpack(opts) })
 
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>lw", "<CMD>set wrap!<CR>", { desc = "Toggle line wrapping", unpack(opts) })

@@ -17,4 +17,7 @@ if vim.fn.isdirectory(backupdir) == 0 then
   vim.fn.mkdir(backupdir, "p")
 end
 
-vim.cmd([[colorscheme rose-pine-moon]])
+vim.cmd([[colorscheme gruvbox-material]])
+
+
+require("lazy").sync({ show = false }) -- Sync plugins without showing the UI
