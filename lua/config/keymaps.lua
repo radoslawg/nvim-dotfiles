@@ -30,10 +30,10 @@ vim.keymap.set("n", "<leader>o", "<CMD>only<CR>", { desc = "Close other windows"
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Equalize window sizes", unpack(opts) })
 
 -- Navigating between windows
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Navigate to the window on the left", unpack(opts) })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Navigate to the window below", unpack(opts) })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Navigate to the window above", unpack(opts) })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Navigate to the window on the right", unpack(opts) })
+vim.keymap.set({ "n", "t", "c" }, "<leader>h", "<C-w>h", { desc = "Navigate to the window on the left", unpack(opts) })
+vim.keymap.set({ "n", "t", "c" }, "<leader>j", "<C-w>j", { desc = "Navigate to the window below", unpack(opts) })
+vim.keymap.set({ "n", "t", "c" }, "<leader>k", "<C-w>k", { desc = "Navigate to the window above", unpack(opts) })
+vim.keymap.set({ "n", "t", "c" }, "<leader>l", "<C-w>l", { desc = "Navigate to the window on the right", unpack(opts) })
 
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>lw", "<CMD>set wrap!<CR>", { desc = "Toggle line wrapping", unpack(opts) })
@@ -89,11 +89,7 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", u
 
 vim.keymap.set("t", "<C-wC>", "<C-\\><C-n><cmd>q<cr>", { desc = "Exit terminae", unpack(opts) })
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode", unpack(opts) })
-vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Navigate to the window on the left", unpack(opts) })  -- Navigate to the window on the left
-vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Navigate to the window below", unpack(opts) })        -- Navigate to the window below
-vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Navigate to the window above", unpack(opts) })        -- Navigate to the window above
-vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Navigate to the window on the right", unpack(opts) }) -- Navigate to the window on the right
 
--- Yank and delete to system clipboard.
-vim.keymap.set({ "n", "v" }, "<leader>yc", '"+y', { desc = "[y]ank to system [c]lipboard", unpack(opts) })
-vim.keymap.set({ "n", "v" }, "<leader>dc", '"+d', { desc = "[d]elete to system [c]lipboard", unpack(opts) })
+vim.keymap.set("n", "<leader>lu", "<CMD>Lazy update<CR>", { desc = "[l]azy [u]pdate", unpack(opts) })
+vim.keymap.set("n", "<leader>ll", "<CMD>Lazy<CR>", { desc = "[l]azy", unpack(opts) })
+vim.keymap.set("n", "<leader>lm", "<CMD>Mason<CR>", { desc = "[m]ason", unpack(opts) })
