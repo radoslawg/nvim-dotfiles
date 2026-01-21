@@ -81,6 +81,11 @@ vim.opt.swapfile = true                            -- Disable swapfile
 vim.opt.directory = vim.fn.expand("~/.vim/swap")   -- Set swap directory
 
 vim.opt.updatetime = 300                           -- Faster completion_item
-vim.opt.timeoutlen = 500                           -- By default timeoutlen is 1000 ms
+vim.opt.timeoutlen = 1000                          -- 1s. to complete a mapped sequence
 vim.opt.autoread = true                            -- Auto reload files changed outside of nvim
 vim.opt.autowrite = true                           -- Auto save before commands like :next and :make
+vim.opt.autowriteall = true                        -- Auto save when switching buffers or windows
+
+vim.opt.clipboard = "unnamedplus"                  -- Use system clipboard
+
+vim.opt.iskeyword:append({ "-", "_" })             -- Treat dash and underscore as part of a word
