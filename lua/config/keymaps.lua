@@ -93,3 +93,70 @@ vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode", unpac
 vim.keymap.set("n", "<leader>lu", "<CMD>Lazy update<CR>", { desc = "[l]azy [u]pdate", unpack(opts) })
 vim.keymap.set("n", "<leader>ll", "<CMD>Lazy<CR>", { desc = "[l]azy", unpack(opts) })
 vim.keymap.set("n", "<leader>lm", "<CMD>Mason<CR>", { desc = "[m]ason", unpack(opts) })
+
+-- Text objects via nvim-treesitter-textobjects
+-- See: https://github.com/nvim-treesitter/nvim-treesitter-textobjects/tree/main
+vim.keymap.set({ "x", "o" }, "af", function()
+  require "nvim-treesitter-textobjects.select".select_textobject("@function.outer", "textobjects")
+end, { desc = "around [f]unction", unpack(opts) })
+vim.keymap.set({ "x", "o" }, "if", function()
+  require "nvim-treesitter-textobjects.select".select_textobject("@function.inner", "textobjects")
+end, { desc = "inside [f]unction", unpack(opts) })
+vim.keymap.set({ "x", "o" }, "ac", function()
+  require "nvim-treesitter-textobjects.select".select_textobject("@class.outer", "textobjects")
+end, { desc = "around [c]lass", unpack(opts) })
+vim.keymap.set({ "x", "o" }, "ic", function()
+  require "nvim-treesitter-textobjects.select".select_textobject("@class.inner", "textobjects")
+end, { desc = "inside [c]lass", unpack(opts) })
+
+vim.keymap.set({ "n", "x", "o" }, "]f", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
+end, { desc = "Next [f]unction start", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "]c", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
+end, { desc = "Next [c]lass start", unpack(opts) })
+-- You can also pass a list to group multiple queries.
+vim.keymap.set({ "n", "x", "o" }, "]o", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects")
+end, { desc = "Next l[o]op start", unpack(opts) })
+-- You can also use captures from other query groups like `locals.scm` or `folds.scm`
+vim.keymap.set({ "n", "x", "o" }, "]s", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@local.scope", "locals")
+end, { desc = "Next [s]cope start", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "]F", function()
+  require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
+end, { desc = "Next [F]unction end", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "]C", function()
+  require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects")
+end, { desc = "Next [C]lass end", unpack(opts) })
+
+vim.keymap.set({ "n", "x", "o" }, "[f", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
+end, { desc = "Previous [f]unction start", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "[c", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
+end, { desc = "Previous [c]lass start", unpack(opts) })
+
+vim.keymap.set({ "n", "x", "o" }, "[F", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
+end, { desc = "Previous [F]unction end", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "[C", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects")
+end, { desc = "Previous [C]lass end", unpack(opts) })
+
+-- Go to either the start or the end, whichever is closer.
+-- Use if you want more granular movements
+vim.keymap.set({ "n", "x", "o" }, "]d", function()
+  require("nvim-treesitter-textobjects.move").goto_next("@conditional.outer", "textobjects")
+end, { desc = "Next [d]ecision/conditional", unpack(opts) })
+vim.keymap.set({ "n", "x", "o" }, "[d", function()
+  require("nvim-treesitter-textobjects.move").goto_previous("@conditional.outer", "textobjects")
+end, { desc = "Previous [d]ecision/conditional", unpack(opts) })
+
+local ts_repeat_move = require "nvim-treesitter-textobjects.repeatable_move"
+
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next, { desc = "Repeat last move forward" })
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous, { desc = "Repeat last move backward" })
+
