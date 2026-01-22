@@ -11,30 +11,24 @@ vim.g.have_nerd_font = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
+vim.opt.expandtab = true      -- Use spaces instead of tabs
+vim.opt.shiftwidth = 2        -- Number of spaces to use for each step of (auto)indent
+vim.opt.tabstop = 2           -- Number of spaces tabs count for
+vim.opt.softtabstop = 2       -- Number of spaces a <Tab> counts for while performing editing operations
 
-vim.opt.smarttab = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+vim.opt.smarttab = true       -- Makes tabbing smarter will realize you have 2 vs 4
+vim.opt.smartindent = true    -- Makes indenting smart
+vim.opt.autoindent = true     -- Copy indent from current line when starting a new line
 
--- Make line numbers default
-vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = true
+vim.opt.number = true         -- Show line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
 
--- Show which line your cursor is on
+-- Show which line your c -- Highlight the current lineursor is on
 vim.opt.cursorline = true
-
--- Enable mouse mode, can be useful for resizing splits for example!
+-- Enable mouse mod -- Enable mouse support in all modese, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
-
--- Don't show the mode, since it's already in the status line
+-- Don't show the mode,  -- We don't need to see things like -- INSERT -- anymoresince it's already in the status line
 vim.opt.showmode = false
-
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -89,3 +83,5 @@ vim.opt.autowriteall = true                        -- Auto save when switching b
 vim.opt.clipboard = "unnamedplus"                  -- Use system clipboard
 
 vim.opt.iskeyword:append({ "-", "_" })             -- Treat dash and underscore as part of a word
+
+vim.opt.winborder = "rounded"                      -- Use rounded borders for windows
