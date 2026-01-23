@@ -1,3 +1,4 @@
+-- A file explorer plugin that opens files in a new buffer, similar to a regular file.
 return {
   "stevearc/oil.nvim",
   ---@module 'oil'

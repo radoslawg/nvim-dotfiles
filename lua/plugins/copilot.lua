@@ -1,3 +1,4 @@
+-- Provides GitHub Copilot support for Neovim.
 return {
   "zbirenbaum/copilot.lua",
   dependencies = {

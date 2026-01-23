@@ -1,3 +1,4 @@
+-- Provides a chat interface for GitHub Copilot in Neovim.
 return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",

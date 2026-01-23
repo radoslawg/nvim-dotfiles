@@ -1,3 +1,4 @@
+-- Provides a completion plugin for Neovim. It supports various sources like LSP, snippets, etc.
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {

@@ -1,3 +1,4 @@
+-- A Neovim plugin that provides a floating terminal window.
 
 return  {'akinsho/toggleterm.nvim', version = "*", opts = {
 --[[ things you want to change go here]]

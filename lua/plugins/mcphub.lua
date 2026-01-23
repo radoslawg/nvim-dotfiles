@@ -1,4 +1,4 @@
--- The MCP Server Manager
+-- A Neovim plugin to manage multiple Minecraft servers.
 return {
   "ravitemer/mcphub.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },

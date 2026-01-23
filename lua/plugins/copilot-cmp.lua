@@ -1,3 +1,4 @@
+-- Provides Copilot integration for nvim-cmp.
 return {
   "zbirenbaum/copilot-cmp",
   config = function()

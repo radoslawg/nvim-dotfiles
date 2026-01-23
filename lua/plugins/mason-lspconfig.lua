@@ -1,3 +1,4 @@
+-- Integrates mason.nvim with nvim-lspconfig, making it easy to install and manage LSP servers.
 return {
 	"mason-org/mason-lspconfig.nvim",
 	opts = {

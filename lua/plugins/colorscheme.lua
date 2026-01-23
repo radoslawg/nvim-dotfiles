@@ -1,3 +1,4 @@
+-- Provides a list of colorscheme plugins for Neovim.
 return {
   { "catppuccin/nvim",             name = "catppuccin",       priority = 1000 },
   { "vague2k/vague.nvim",          name = "vague",            priority = 1000 },

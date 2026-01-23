@@ -1,3 +1,4 @@
+-- A blazing fast and beautiful statusline for Neovim.
 return {
   'nvim-lualine/lualine.nvim',
   version = '*', -- latest stable release

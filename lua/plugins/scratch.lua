@@ -1,3 +1,4 @@
+-- Provides a scratch buffer for quick notes and temporary edits.
 return {
     "reybits/scratch.nvim",
     lazy = true,

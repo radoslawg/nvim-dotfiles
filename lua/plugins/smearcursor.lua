@@ -1,3 +1,4 @@
+-- Provides a smooth, 'smeared' cursor animation effect.
 return {
   "sphamba/smear-cursor.nvim",
   opts = {

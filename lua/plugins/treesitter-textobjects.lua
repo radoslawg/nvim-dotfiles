@@ -1,3 +1,4 @@
+-- Extends Neovim's text objects using Treesitter, allowing for more precise and semantic selections.
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
   branch = "main",

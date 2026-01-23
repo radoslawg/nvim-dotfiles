@@ -1,3 +1,4 @@
+-- Provides a powerful AI code generation and editing tool for Neovim.
 return {
   "olimorris/codecompanion.nvim",
   dependencies = {

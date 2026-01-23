@@ -1,3 +1,4 @@
+-- A highly extendable fuzzy finder over lists for Neovim.
 return { -- Fuzzy Finder (files, lsp, etc)
   "nvim-telescope/telescope.nvim",
   event = "VimEnter",

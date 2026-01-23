@@ -1,3 +1,4 @@
+-- Provides a minimal and fast commenting plugin for Neovim.
 return {
   'nvim-mini/mini.comment',
   version = '*',

@@ -1,3 +1,4 @@
+-- Provides a way to format code in Neovim, with support for various formatters and languages.
 return {
   "stevearc/conform.nvim",
   opts = {
