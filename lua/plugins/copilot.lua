@@ -1,1 +1,10 @@
-return { "github/copilot.vim" }
+return {
+  "zbirenbaum/copilot.lua",
+  dependencies = {
+    "copilotlsp-nvim/copilot-lsp", -- (optional) for NES functionality
+  },
+  opts = {
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+  },
+}
