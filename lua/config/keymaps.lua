@@ -88,7 +88,7 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down",
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", unpack(opts) })   -- Move selection up
 
 vim.keymap.set("t", "<C-wC>", "<C-\\><C-n><cmd>q<cr>", { desc = "Exit terminae", unpack(opts) })
-vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode", unpack(opts) })
+vim.keymap.set("t", "<ESC>", "<cmd>x<cr>", { desc = "Exit terminal mode", unpack(opts) })
 
 vim.keymap.set("n", "<leader>lu", "<CMD>Lazy update<CR>", { desc = "[l]azy [u]pdate", unpack(opts) })
 vim.keymap.set("n", "<leader>ll", "<CMD>Lazy<CR>", { desc = "[l]azy", unpack(opts) })
@@ -159,4 +159,3 @@ local ts_repeat_move = require "nvim-treesitter-textobjects.repeatable_move"
 -- ensure ; goes forward and , goes backward regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next, { desc = "Repeat last move forward" })
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous, { desc = "Repeat last move backward" })
-
