@@ -79,9 +79,16 @@ vim.opt.timeoutlen = 1000                          -- 1s. to complete a mapped s
 vim.opt.autoread = true                            -- Auto reload files changed outside of nvim
 vim.opt.autowrite = true                           -- Auto save before commands like :next and :make
 vim.opt.autowriteall = true                        -- Auto save when switching buffers or windows
-
 vim.opt.clipboard = "unnamedplus"                  -- Use system clipboard
 
 vim.opt.iskeyword:append({ "-", "_" })             -- Treat dash and underscore as part of a word
 
 vim.opt.winborder = "rounded"                      -- Use rounded borders for windows
+
+vim.api.nvim_create_autocmd({"BufLeave", "FocusLost"}, {
+  desc = "Auto save when leaving a buffer or when neovim loses focus",
+  group = vim.api.nvim_create_augroup("auto-save", { clear = true }),
+  callback = function()
+    vim.cmd("silent! wall")
+  end,
+})
