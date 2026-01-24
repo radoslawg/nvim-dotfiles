@@ -2,10 +2,9 @@
 return {
   { -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    lazy = false,
-    config = function()
+    build = function()
       local ts = require("nvim-treesitter")
+      ts.update():wait(300000)
       ts.install({
         "bash",
         "lua",
@@ -18,9 +17,11 @@ return {
         "cpp",
         "rust",
         "go",
+        "c",
       })
-      ts.setup()
     end,
+    lazy = false,
+    opts = {},
   },
   {
     "MeanderingProgrammer/treesitter-modules.nvim",

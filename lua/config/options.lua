@@ -71,7 +71,7 @@ vim.opt.backup = true                              -- Enable backup filesystem
 vim.opt.backupdir = vim.fn.expand("~/.vim/backup") -- Set backup directory
 vim.opt.undofile = true                            -- Enable persistent undo
 vim.opt.undodir = vim.fn.expand("~/.vim/undo")     -- Set undo directory
-vim.opt.swapfile = true                            -- Disable swapfile
+vim.opt.swapfile = false                           -- Disable swapfile
 vim.opt.directory = vim.fn.expand("~/.vim/swap")   -- Set swap directory
 
 vim.opt.updatetime = 300                           -- Faster completion_item
@@ -85,7 +85,7 @@ vim.opt.iskeyword:append({ "-", "_" })             -- Treat dash and underscore 
 
 vim.opt.winborder = "rounded"                      -- Use rounded borders for windows
 
-vim.api.nvim_create_autocmd({"BufLeave", "FocusLost"}, {
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
   desc = "Auto save when leaving a buffer or when neovim loses focus",
   group = vim.api.nvim_create_augroup("auto-save", { clear = true }),
   callback = function()

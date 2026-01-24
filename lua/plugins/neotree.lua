@@ -15,7 +15,7 @@ return {
     -- fill any relevant options here
   },
   keys = {
-      { "<leader>yy", "<cmd>Neotree toggle position=left<cr>", desc = "Toggle Neotree" },
-      { "<leader>yY", "<cmd>Neotree float<cr>", desc = "Open Neotree floating window" },
+    { "<leader>yy", "<cmd>Neotree toggle position=left reveal reveal_force_cwd<cr>", desc = "Toggle Neotree" },
+    { "<leader>yY", "<cmd>Neotree float<cr>",                                        desc = "Open Neotree floating window" },
   },
- }
+}
