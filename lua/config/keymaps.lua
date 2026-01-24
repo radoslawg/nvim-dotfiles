@@ -25,7 +25,6 @@ vim.keymap.set("n", "<leader>b", "<CMD>enew<CR>", { desc = "New buffer", unpack(
 -- Window Management
 vim.keymap.set("n", "<leader>sv", "<CMD>vsplit<CR>", { desc = "[S]plit [V]ertical", unpack(opts) })
 vim.keymap.set("n", "<leader>sh", "<CMD>split<CR>", { desc = "[S]plit [H]orizontal", unpack(opts) })
-vim.keymap.set("n", "<leader>x", "<CMD>q<CR>", { desc = "Close window", unpack(opts) })
 vim.keymap.set("n", "<leader>o", "<CMD>only<CR>", { desc = "Close other windows", unpack(opts) })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Equalize window sizes", unpack(opts) })
 
@@ -50,7 +49,6 @@ vim.keymap.set("n", "g]", function()
   vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "[G]o to next diagnostic", unpack(opts) })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list", unpack(opts) })
 
 -- Split resizing
 vim.keymap.set("n", "<Right>", "<CMD>vertical resize +2<CR>", { desc = "Increase vertical split size", unpack(opts) })
