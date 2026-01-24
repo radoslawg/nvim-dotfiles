@@ -4,7 +4,7 @@ return {
   version = '*', -- latest stable release
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
-    theme = 'gruvbox-material',
+    theme = 'zenburn',
     icons_enabled = true,
   },
   Lazy = false,
