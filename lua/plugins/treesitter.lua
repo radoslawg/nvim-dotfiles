@@ -18,6 +18,7 @@ return {
         "rust",
         "go",
         "c",
+        "html",
       })
     end,
     lazy = false,
