@@ -19,10 +19,15 @@ end
 vim.cmd([[colorscheme zenburn]])
 
 vim.api.nvim_create_autocmd("User", {
-  pattern = "LazyDone",
+  pattern = "VeryLazy",
   callback = function()
-    local lazy = require("lazy.status")
-    if lazy.has_updates() then
+    local checker = require("lazy.manage.checker")
+    local lazy = require("lazy")
+    checker.check()
+    local updates = #checker.updated
+    vim.api.nvim_echo({ { "Updates: " .. updates } }, true, {})
+    if updates > 0 then
+      vim.api.nvim_echo({ { "Jestem" }, }, true, {})
       lazy.sync({ show = false }) -- Sync plugins without showing the UI
     end
   end,
