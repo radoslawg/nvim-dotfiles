@@ -19,6 +19,7 @@ return {
         "go",
         "c",
         "html",
+        "python",
       })
     end,
     lazy = false,

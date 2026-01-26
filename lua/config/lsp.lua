@@ -25,6 +25,26 @@ vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
   end,
 })
 
+vim.lsp.config('pylsp', {
+  settings = {
+    pylsp = {
+      plugins = {
+        autopep8 = { enabled = false },
+        pyflakes = { enabled = true},
+        pylint = { enabled = true },
+        flake8 = {
+          enabled = true,
+          maxLineLength = 180,
+        },
+        pycodestyle = {
+          ignore = { 'W391' },
+          maxLineLength = 180
+        }
+      }
+    }
+  }
+})
+
 vim.lsp.config("lua_ls", {
   settings = {
     root_markers = {
