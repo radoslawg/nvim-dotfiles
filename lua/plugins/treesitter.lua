@@ -20,6 +20,7 @@ return {
         "c",
         "html",
         "python",
+        "yaml",
       })
     end,
     lazy = false,
