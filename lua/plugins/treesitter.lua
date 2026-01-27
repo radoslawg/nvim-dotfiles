@@ -2,29 +2,35 @@
 return {
   { -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
-    build = function()
-      local ts = require("nvim-treesitter")
-      ts.update():wait(300000)
-      ts.install({
+    config = function()
+      local filetypes = {
         "bash",
+        "c",
+        "diff",
+        "html",
         "lua",
         "luadoc",
         "markdown",
         "markdown_inline",
+        "query",
         "vim",
         "vimdoc",
-        "powershell",
-        "cpp",
-        "rust",
-        "go",
-        "c",
-        "html",
-        "python",
         "yaml",
+        "python",
+        "html",
+        "go",
+        "rust",
+        "cpp",
+        "powershell",
+      }
+      require("nvim-treesitter").install(filetypes)
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = filetypes,
+        callback = function()
+          vim.treesitter.start()
+        end,
       })
     end,
-    lazy = false,
-    opts = {},
   },
   {
     "MeanderingProgrammer/treesitter-modules.nvim",
@@ -40,5 +46,5 @@ return {
         },
       },
     },
-  }
+  },
 }
