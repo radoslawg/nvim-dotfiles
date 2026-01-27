@@ -12,17 +12,10 @@ return {
           "2",
         },
       },
-      fourmolu = {
-        prepend_args = {
-          "--indentation",
-          "2",
-        },
-      },
     },
     formatters_by_ft = {
       lua = { "stylua" },
-      go = { "goimports", "gofmt" },
-      haskell = { "fourmolu", "stylish-haskell" },
+      go = { "goimports" },
       python = { "black" },
       rust = { "rustfmt", lsp_format = "fallback" },
       javascript = { "prettier" },
