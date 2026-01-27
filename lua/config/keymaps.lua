@@ -69,7 +69,6 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename", silent =
 -- vim.keymap.set("n", "<leader>e", function () vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
 -- vim.keymap.set("n", "K", function () vim.lsp.buf.hover(floating_options) end, { silent = true })
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", silent = true }) -- changed to Ctrl+k to avoid conflict with window navigation
-vim.keymap.set("n", "<leader>f", conform.format, { desc = "[f]ormat file", silent = true }) -- format file
 
 -- change working directory to the location of the current file
 vim.keymap.set(
