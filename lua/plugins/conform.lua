@@ -1,6 +1,18 @@
--- Provides a way to format code in Neovim, with support for various formatters and languages.
+-- Powerful formatting plugin for Neovim that provides a consistent interface
+-- for running various external formatters (like stylua, goimports, black, prettier).
+-- It supports asynchronous formatting, format-on-save, and per-language configuration.
 return {
   "stevearc/conform.nvim",
+  keys = {
+    {
+      "<leader>f",
+      function()
+        require("conform").format({ async = true, lsp_format = "fallback" })
+      end,
+      mode = "",
+      desc = "[f]ormat buffer",
+    },
+  },
   opts = {
     formatters = {
       stylua = {
