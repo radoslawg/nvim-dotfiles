@@ -21,7 +21,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { "nvim-telescope/telescope-ui-select.nvim" },
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
-    { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
+    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -61,13 +61,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
       },
       pickers = {
         find_files = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv', '.stfolder' },
-          hidden = true
-        }
+          file_ignore_patterns = { "node_modules", ".git", ".venv", ".stfolder" },
+          hidden = true,
+        },
       },
       live_grep = {
-        file_ignore_patterns = { 'node_modules', '.git', '.venv', '.stfolder' },
-        additional_args = { "--hidden" }
+        file_ignore_patterns = { "node_modules", ".git", ".venv", ".stfolder" },
+        additional_args = { "--hidden" },
       },
     })
 
@@ -80,6 +80,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set("n", "<leader>se", builtin.help_tags, { desc = "[S]earch H[e]lp", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+    vim.keymap.set("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [G]it files" })
     vim.keymap.set("n", "<leader>sc", builtin.grep_string, { desc = "[s]earch [c]urrent word" })
     vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
     vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "Open [D]iagnostics" })

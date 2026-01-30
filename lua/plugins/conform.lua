@@ -34,6 +34,7 @@ return {
       typescript = { "prettier" },
       html = { "prettier" },
       css = { "prettier" },
+      toml = { "tombi" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {

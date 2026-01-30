@@ -133,6 +133,7 @@ return {
       "rust_analyzer",
       "pylsp",
       "lua_ls",
+      "marksman",
     }
 
     for _, name in ipairs(servers) do

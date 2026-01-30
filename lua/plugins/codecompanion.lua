@@ -4,6 +4,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+    "ravitemer/mcphub.nvim",
   },
   opts = {
     -- NOTE: The log_level is in `opts.opts`
