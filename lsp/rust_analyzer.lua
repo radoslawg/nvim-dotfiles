@@ -2,3 +2,4 @@
 -- This file allows customizing Rust-specific settings, features, and initialization options.
 
 return {}
+
