@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 local conform = require("conform")
 
-vim.keymap.set("n", "Q", "<nop>") -- Disable Ex mode 
+vim.keymap.set("n", "Q", "<nop>") -- Disable Ex mode
 
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Remove highlight", unpack(opts) })
 -- Save file without formatting
@@ -11,8 +11,6 @@ vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save file", unpack(opts
 
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', { desc = "Delete single character without copying into register", unpack(opts) })
-
-vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "[e]xplore files in Oil", unpack(opts) })
 
 vim.keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open new tab", unpack(opts) })
 vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab", unpack(opts) })
@@ -46,10 +44,10 @@ vim.keymap.set("x", ">", ">gv", { desc = "Stay in visual mode after shifting", u
 
 -- Diagnostic navigation
 vim.keymap.set("n", "g[", function()
-	vim.diagnostic.jump({ count = 1, float = true })
+  vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "[G]o to previous diagnostic", unpack(opts) })
 vim.keymap.set("n", "g]", function()
-	vim.diagnostic.jump({ count = -1, float = true })
+  vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "[G]o to next diagnostic", unpack(opts) })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
 
@@ -74,10 +72,10 @@ vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Hel
 
 -- change working directory to the location of the current file
 vim.keymap.set(
-	"n",
-	"<leader>cd",
-	":cd %:p:h<CR>:pwd<CR>",
-	{ desc = "Change working directory to the location of the current file", unpack(opts) }
+  "n",
+  "<leader>cd",
+  ":cd %:p:h<CR>:pwd<CR>",
+  { desc = "Change working directory to the location of the current file", unpack(opts) }
 )
 
 vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move line down", unpack(opts) }) -- Move line down
@@ -95,60 +93,60 @@ vim.keymap.set("n", "<leader>lm", "<CMD>Mason<CR>", { desc = "[m]ason", unpack(o
 -- Text objects via nvim-treesitter-textobjects
 -- See: https://github.com/nvim-treesitter/nvim-treesitter-textobjects/tree/main
 vim.keymap.set({ "x", "o" }, "af", function()
-	require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
 end, { desc = "around [f]unction", unpack(opts) })
 vim.keymap.set({ "x", "o" }, "if", function()
-	require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
 end, { desc = "inside [f]unction", unpack(opts) })
 vim.keymap.set({ "x", "o" }, "ac", function()
-	require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
 end, { desc = "around [c]lass", unpack(opts) })
 vim.keymap.set({ "x", "o" }, "ic", function()
-	require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
 end, { desc = "inside [c]lass", unpack(opts) })
 
 vim.keymap.set({ "n", "x", "o" }, "]f", function()
-	require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
 end, { desc = "Next [f]unction start", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "]c", function()
-	require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
 end, { desc = "Next [c]lass start", unpack(opts) })
 -- You can also pass a list to group multiple queries.
 vim.keymap.set({ "n", "x", "o" }, "]o", function()
-	require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects")
 end, { desc = "Next l[o]op start", unpack(opts) })
 -- You can also use captures from other query groups like `locals.scm` or `folds.scm`
 vim.keymap.set({ "n", "x", "o" }, "]s", function()
-	require("nvim-treesitter-textobjects.move").goto_next_start("@local.scope", "locals")
+  require("nvim-treesitter-textobjects.move").goto_next_start("@local.scope", "locals")
 end, { desc = "Next [s]cope start", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "]F", function()
-	require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
 end, { desc = "Next [F]unction end", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "]C", function()
-	require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects")
 end, { desc = "Next [C]lass end", unpack(opts) })
 
 vim.keymap.set({ "n", "x", "o" }, "[f", function()
-	require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
 end, { desc = "Previous [f]unction start", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "[c", function()
-	require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
 end, { desc = "Previous [c]lass start", unpack(opts) })
 
 vim.keymap.set({ "n", "x", "o" }, "[F", function()
-	require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
 end, { desc = "Previous [F]unction end", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "[C", function()
-	require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects")
 end, { desc = "Previous [C]lass end", unpack(opts) })
 
 -- Go to either the start or the end, whichever is closer.
 -- Use if you want more granular movements
 vim.keymap.set({ "n", "x", "o" }, "]d", function()
-	require("nvim-treesitter-textobjects.move").goto_next("@conditional.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_next("@conditional.outer", "textobjects")
 end, { desc = "Next [d]ecision/conditional", unpack(opts) })
 vim.keymap.set({ "n", "x", "o" }, "[d", function()
-	require("nvim-treesitter-textobjects.move").goto_previous("@conditional.outer", "textobjects")
+  require("nvim-treesitter-textobjects.move").goto_previous("@conditional.outer", "textobjects")
 end, { desc = "Previous [d]ecision/conditional", unpack(opts) })
 
 local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
