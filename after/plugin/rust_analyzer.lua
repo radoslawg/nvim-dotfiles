@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Ensure we only apply these mappings when 'rust_analyzer' is the one attaching
     if client and client.name == "rust_analyzer" then
       -- Set the keymap only for the current buffer
-      vim.keymap.set("n", "<leader>cr", "<cmd>Crun<CR>", {
+      vim.keymap.set("n", "<leader>cr", "<cmd>wall<CR><cmd>Crun<CR>", {
         buffer = args.buf,
         desc = "Cargo [r]un",
       })
