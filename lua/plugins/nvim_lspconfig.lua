@@ -134,6 +134,7 @@ return {
       "pylsp",
       "lua_ls",
       "marksman",
+      "powershell_es",
     }
 
     for _, name in ipairs(servers) do
