@@ -7,16 +7,16 @@ return {
     opts = {
       styles = {
         functions = { bold = true },
-        keywords = {},
+        keywords = { bold = false },
         comments = { italic = true },
         strings = { bold = false },
         constants = {}, -- includes numbers, booleans
       },
       colors = {
-        fg = "#fafaf0",
+        fg = "#bbbbbb",
         string = "#e3a857",
         const = "#ffa07a",
-        keyword = "#bbbbbb",
+        keyword = "#fffff0",
       },
     },
   },
