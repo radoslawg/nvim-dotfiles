@@ -1,9 +1,29 @@
 -- Provides a list of colorscheme plugins for Neovim.
 return {
   {
+    "oskarnurm/koda.nvim",
+    name = "koda",
+    priorty = 1000,
+    opts = {
+      styles = {
+        functions = { bold = false },
+        keywords = {},
+        comments = { italic = true },
+        strings = { bold = true },
+        constants = {}, -- includes numbers, booleans
+      },
+    },
+  },
+  {
     "phha/zenburn.nvim",
     opts = {},
     priority = 1000,
+  },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", priority = 1000 },
+  {
+    "scottmckendry/cyberdream.nvim",
+    priority = 1000,
+    opts = {},
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { transparent_background = false } },
   { "vague2k/vague.nvim", name = "vague", priority = 1000 },
