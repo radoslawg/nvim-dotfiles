@@ -135,6 +135,7 @@ return {
       "lua_ls",
       "marksman",
       "powershell_es",
+      "csharp_ls",
     }
 
     for _, name in ipairs(servers) do

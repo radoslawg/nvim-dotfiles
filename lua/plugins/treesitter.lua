@@ -22,6 +22,7 @@ return {
         "rust",
         "cpp",
         "powershell",
+        "c_sharp",
       }
       require("nvim-treesitter").install(filetypes)
       vim.api.nvim_create_autocmd("FileType", {
