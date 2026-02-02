@@ -35,6 +35,7 @@ return {
       html = { "prettier" },
       css = { "prettier" },
       toml = { "tombi" },
+      csharp = { "csharpier" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {
