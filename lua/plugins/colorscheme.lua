@@ -6,11 +6,17 @@ return {
     priorty = 1000,
     opts = {
       styles = {
-        functions = { bold = false },
+        functions = { bold = true },
         keywords = {},
         comments = { italic = true },
-        strings = { bold = true },
+        strings = { bold = false },
         constants = {}, -- includes numbers, booleans
+      },
+      colors = {
+        fg = "#fafaf0",
+        string = "#e3a857",
+        const = "#ffa07a",
+        keyword = "#bbbbbb",
       },
     },
   },
