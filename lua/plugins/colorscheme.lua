@@ -28,7 +28,20 @@ return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { transparent_background = false } },
   { "vague2k/vague.nvim", name = "vague", priority = 1000 },
   { "EdenEast/nightfox.nvim", name = "nightfox", priority = 1000 },
-  { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
+  {
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    priority = 1000,
+    opts = {
+      colors = {
+        palette = {
+          -- change all usages of these colors
+          dragonBlack3 = "#080606",
+          dragonWhite = "#e5e9e5",
+        },
+      },
+    },
+  },
   { "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
   { "navarasu/onedark.nvim", name = "onedark", priority = 1000 },
   { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
