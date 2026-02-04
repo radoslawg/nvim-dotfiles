@@ -1,5 +1,6 @@
 -- Provides a list of colorscheme plugins for Neovim.
 return {
+  { "shaunsingh/nord.nvim", name = "nord", priorty = 1000 },
   {
     "oskarnurm/koda.nvim",
     name = "koda",

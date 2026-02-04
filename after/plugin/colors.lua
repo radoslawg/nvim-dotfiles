@@ -1,1 +1,1 @@
-vim.cmd([[colorscheme koda]])
+vim.cmd([[colorscheme nord]])
