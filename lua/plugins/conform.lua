@@ -35,7 +35,8 @@ return {
       html = { "prettier" },
       css = { "prettier" },
       toml = { "tombi" },
-      csharp = { "csharpier" },
+      cs = { lsp_format = "first" },
+      json = { "jq" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {
