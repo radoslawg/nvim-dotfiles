@@ -83,8 +83,7 @@ vim.keymap.set("n", "<A-k>", "<CMD>m .-2<CR>==", { desc = "Move line up", unpack
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", unpack(opts) }) -- Move selection down
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", unpack(opts) }) -- Move selection up
 
-vim.keymap.set("t", "<C-wC>", "<C-\\><C-n><cmd>q<cr>", { desc = "Exit terminae", unpack(opts) })
-vim.keymap.set("t", "<ESC>", "<cmd>x<cr>", { desc = "Exit terminal mode", unpack(opts) })
+vim.keymap.set("t", "<ESC><ESC>", "<cmd>x<cr>", { desc = "Exit terminal", unpack(opts) })
 
 vim.keymap.set("n", "<leader>lu", "<CMD>Lazy update<CR>", { desc = "[l]azy [u]pdate", unpack(opts) })
 vim.keymap.set("n", "<leader>ll", "<CMD>Lazy<CR>", { desc = "[l]azy", unpack(opts) })

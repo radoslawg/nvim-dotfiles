@@ -5,6 +5,8 @@
 --  For more options, you can see `:help option-list`
 vim.g.have_nerd_font = true
 
+vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -87,8 +89,8 @@ vim.opt.undodir = vim.fn.expand("~/.vim/undo") -- Set undo directory
 vim.opt.swapfile = false -- Disable swapfile
 vim.opt.directory = vim.fn.expand("~/.vim/swap") -- Set swap directory
 
-vim.opt.updatetime = 300 -- Faster completion_item
-vim.opt.timeoutlen = 1000 -- 1s. to complete a mapped sequence
+vim.opt.updatetime = 250 -- Faster completion_item
+vim.opt.timeoutlen = 300 -- 300ms. to complete a mapped sequence
 vim.opt.autoread = true -- Auto reload files changed outside of nvim
 vim.opt.autowrite = true -- Auto save before commands like :next and :make
 vim.opt.autowriteall = true -- Auto save when switching buffers or windows
