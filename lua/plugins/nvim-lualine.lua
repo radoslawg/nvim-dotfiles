@@ -4,7 +4,7 @@ return {
   version = '*', -- latest stable release
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
-    theme = 'zenburn',
+    theme = 'ashen',
     icons_enabled = true,
   },
   Lazy = false,
