@@ -1,19 +1,19 @@
 -- Provides a list of colorscheme plugins for Neovim.
 return {
   {
-  "ficcdaf/ashen.nvim",
-  -- optional but recommended,
-  -- pin to the latest stable release:
-  tag = "",
-  name="ashen",
-  lazy = false,
-  priority = 1000,
-  -- configuration is optional!
-  opts = {
-    -- your settings here
+    "ficcdaf/ashen.nvim",
+    -- optional but recommended,
+    -- pin to the latest stable release:
+    tag = "*",
+    name = "ashen",
+    lazy = false,
+    priority = 1000,
+    -- configuration is optional!
+    opts = {
+      -- your settings here
+    },
   },
-},
-  { "miikanissi/modus-themes.nvim", name="modus", priority = 1000 },
+  { "miikanissi/modus-themes.nvim", name = "modus", priority = 1000 },
   { "shaunsingh/nord.nvim", name = "nord", priorty = 1000 },
   {
     "oskarnurm/koda.nvim",

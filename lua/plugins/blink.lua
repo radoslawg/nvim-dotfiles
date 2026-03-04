@@ -1,11 +1,13 @@
 -- Provides a completion plugin for Neovim. It supports various sources like LSP, snippets, etc.
 return { -- Autocompletion
   "saghen/blink.cmp",
+  optional = true,
   event = "VimEnter",
   version = "1.*",
   dependencies = {
     -- Snippet Engine
     {
+      "fang2hou/blink-copilot",
       "L3MON4D3/LuaSnip",
       version = "2.*",
       build = (function()
@@ -57,7 +59,7 @@ return { -- Autocompletion
       -- <c-k>: Toggle signature help
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      preset = "enter",
+      preset = "default",
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -72,11 +74,19 @@ return { -- Autocompletion
     completion = {
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 1000 },
+      documentation = { auto_show = true, auto_show_delay_ms = 1000 },
     },
 
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "copilot", "lsp", "path", "snippets", "buffer" },
+      providers = {
+        copilot = {
+          name = "copilot",
+          module = "blink-copilot",
+          score_offset = 100,
+          async = true,
+        },
+      },
     },
 
     snippets = { preset = "luasnip" },
