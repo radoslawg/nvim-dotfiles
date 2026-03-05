@@ -3,15 +3,23 @@
 -- and sets up global options for floating windows used by LSP.
 
 vim.diagnostic.config({
-  virtual_lines = {
-    current_line_only = true, -- Enable virtual lines only for the current line
+  -- virtual_lines = {
+  --   current_line_only = true, -- Enable virtual lines only for the current line
+  -- },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.HINT] = " ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
   },
-  --virtual_text = true,
-  signs = true, --
-  nderline = true,
+  --  virtual_lines = true,
+  virtual_text = false,
+  underline = false,
   -- Enable underline for diagnostics
-  update_in_insert = true, -- Update diagnostics in insert mode
-  severity_sort = false, -- Do not sort diagnostics by severity
+  update_in_insert = false, -- Update diagnostics in insert mode
+  severity_sort = true, -- sort diagnostics by severity
 })
 
 _G.floating_options = {

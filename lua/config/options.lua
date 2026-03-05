@@ -1,5 +1,3 @@
--- Options should be taken from Kickstart
---
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`

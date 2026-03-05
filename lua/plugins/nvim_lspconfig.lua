@@ -130,7 +130,6 @@ return {
     -- You can press `g?` for help in this menu.
     local servers = {
       "gopls",
-      "rust_analyzer",
       "pylsp",
       "lua_ls",
       "marksman",
