@@ -4,7 +4,6 @@ return {
     "ficcdaf/ashen.nvim",
     -- optional but recommended,
     -- pin to the latest stable release:
-    tag = "*",
     name = "ashen",
     lazy = false,
     priority = 1000,
