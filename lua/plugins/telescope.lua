@@ -84,7 +84,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       builtin.lsp_references,
       { desc = "[c]ode [r]eferences", noremap = true, silent = true }
     )
-    vim.keymap.set("n", "<leader>fe", builtin.help_tags, { desc = "[f]ind H[e]lp", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[f]ind H[e]lp", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[f]ind [K]eymaps", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind [F]iles" })
     vim.keymap.set("n", "<leader>fG", builtin.git_files, { desc = "[f]ind [G]it files" })
