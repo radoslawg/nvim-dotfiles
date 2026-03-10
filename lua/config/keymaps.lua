@@ -49,7 +49,7 @@ end, { desc = "[G]o to previous diagnostic", unpack(opts) })
 vim.keymap.set("n", "g]", function()
   vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "[G]o to next diagnostic", unpack(opts) })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics", unpack(opts) })
+vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Open [d]iagnostics", unpack(opts) })
 
 -- Split resizing
 vim.keymap.set("n", "<Right>", "<CMD>vertical resize +2<CR>", { desc = "Increase vertical split size", unpack(opts) })
@@ -73,9 +73,9 @@ vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Hel
 -- change working directory to the location of the current file
 vim.keymap.set(
   "n",
-  "<leader>cd",
+  "<leader>CD",
   ":cd %:p:h<CR>:pwd<CR>",
-  { desc = "Change working directory to the location of the current file", unpack(opts) }
+  { desc = "[C]hange working [D]irectory to the location of the current file", unpack(opts) }
 )
 
 vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move line down", unpack(opts) }) -- Move line down
@@ -154,3 +154,35 @@ local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
 -- ensure ; goes forward and , goes backward regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next, { desc = "Repeat last move forward" })
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous, { desc = "Repeat last move backward" })
+
+-- DEBUGGING
+vim.keymap.set("n", "<leader>db", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "Toggle [b]reakpoint", unpack(opts) })
+vim.keymap.set("n", "<F5>", function()
+  require("dap").continue()
+end, { desc = "[c]ontinue", unpack(opts) })
+vim.keymap.set("n", "<F11>", function()
+  require("dap").step_into()
+end, { desc = "Step [i]nto", unpack(opts) })
+vim.keymap.set("n", "<F10>", function()
+  require("dap").step_over()
+end, { desc = "Step [o]ver", unpack(opts) })
+vim.keymap.set("n", "<S-F10>", function()
+  require("dap").step_out()
+end, { desc = "Step [O]ut", unpack(opts) })
+vim.keymap.set("n", "<leader>dr", function()
+  require("dap").repl.toggle()
+end, { desc = "[r]epl toggle", unpack(opts) })
+vim.keymap.set("n", "<leader>dl", function()
+  require("dap").run_last()
+end, { desc = "Run [l]ast", unpack(opts) })
+vim.keymap.set("n", "<leader>du", function()
+  require("dapui").toggle()
+end, { desc = "[u]i toggle", unpack(opts) })
+vim.keymap.set("n", "<leader>dt", function()
+  require("dap").terminate()
+end, { desc = "[t]erminate", unpack(opts) })
+vim.keymap.set("n", "<leader>dx", function()
+  require("dap").clear_breakpoints()
+end, { desc = "Clear breakpoints", unpack(opts) })

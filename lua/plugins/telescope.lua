@@ -78,21 +78,25 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set("n", "<leader>cr", builtin.lsp_references,
-      { desc = "[c]ode [r]eferences", noremap = true, silent = true })
-    vim.keymap.set("n", "<leader>se", builtin.help_tags, { desc = "[S]earch H[e]lp", noremap = true, silent = true })
-    vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps", noremap = true, silent = true })
-    vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-    vim.keymap.set("n", "<leader>sG", builtin.git_files, { desc = "[S]earch [G]it files" })
-    vim.keymap.set("n", "<leader>sc", builtin.grep_string, { desc = "[s]earch [c]urrent word" })
-    vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-    vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "Open [D]iagnostics" })
-    vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-    vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-    vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { desc = "[S]earch [s]ymbols in File" })
-    vim.keymap.set("n", "<leader>sS", builtin.lsp_workspace_symbols, { desc = "[S]earch [S]ymbols in Workspace" })
-    vim.keymap.set("n", "<leader>s/", function()
+    vim.keymap.set(
+      "n",
+      "<leader>cr",
+      builtin.lsp_references,
+      { desc = "[c]ode [r]eferences", noremap = true, silent = true }
+    )
+    vim.keymap.set("n", "<leader>fe", builtin.help_tags, { desc = "[f]ind H[e]lp", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[f]ind [K]eymaps", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind [F]iles" })
+    vim.keymap.set("n", "<leader>fG", builtin.git_files, { desc = "[f]ind [G]it files" })
+    vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "[s]earch [c]urrent word" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[f]ind by [G]rep" })
+    vim.keymap.set("n", "<leader>cd", builtin.diagnostics, { desc = "[c]ode [d]iagnostics" })
+    vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[f]ind [R]esume" })
+    vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
+    vim.keymap.set("n", "<leader>f<leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+    vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "[f]ind [s]ymbols in File" })
+    vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, { desc = "[f]ind [S]ymbols in Workspace" })
+    vim.keymap.set("n", "<leader>f/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
         winblend = 10,
