@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>cC", function()
   vim.cmd.RustLsp("openCargo")
 end, { desc = "open [C]argo", silent = true, buffer = bufnr })
 
-vim.keymap.set("n", "<leader>cr", ":Crun", { desc = "cargo [r]un", silent = true, buffer = bufnr })
+vim.keymap.set("n", "<leader>cR", ":Crun", { desc = "cargo [R]un", silent = true, buffer = bufnr })
 vim.keymap.set(
   "n",
   "K", -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
