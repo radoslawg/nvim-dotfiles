@@ -11,7 +11,17 @@ return {
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-    }
-  }
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          -- Animation style one of { "fade", "slide", "fade_in_slide_out", "static" }
+          stages = "fade_in_slide_out",
+          timeout = 2000,
+          max_width = 100,
+          max_height = 20,
+          background_colour = "#000000",
+        },
+      },
+    },
+  },
 }
