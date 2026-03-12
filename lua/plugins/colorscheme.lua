@@ -45,7 +45,7 @@ return {
     priority = 1000,
     opts = {},
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { transparent_background = false } },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { transparent_background = true } },
   { "vague2k/vague.nvim", name = "vague", priority = 1000 },
   { "EdenEast/nightfox.nvim", name = "nightfox", priority = 1000 },
   {

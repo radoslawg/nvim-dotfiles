@@ -1,1 +1,1 @@
-vim.cmd([[colorscheme ashen]])
+vim.cmd([[colorscheme catppuccin]])
