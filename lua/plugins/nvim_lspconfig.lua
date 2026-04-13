@@ -137,6 +137,7 @@ return {
       "csharp_ls",
       "ts_ls",
       "oxlint",
+      "glsl_analyzer",
     }
 
     for _, name in ipairs(servers) do

@@ -64,7 +64,20 @@ return {
   },
   { "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
   { "navarasu/onedark.nvim", name = "onedark", priority = 1000 },
-  { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+    opts = {
+      variant = "moon",
+      styles = {
+        transparency = true,
+      },
+      highlight_groups = {
+        CursorLine = { fg = "NONE", bg = "#10101A" },
+      },
+    },
+  },
   { "projekt0n/github-nvim-theme", name = "github-theme", priority = 1000 },
   {
     "f4z3r/gruvbox-material.nvim",
