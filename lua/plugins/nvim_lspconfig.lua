@@ -138,6 +138,7 @@ return {
       "ts_ls",
       "oxlint",
       "glsl_analyzer",
+      "astro",
     }
 
     for _, name in ipairs(servers) do
