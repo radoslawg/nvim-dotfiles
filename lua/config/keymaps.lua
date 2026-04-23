@@ -1,5 +1,49 @@
 local opts = { noremap = true, silent = true }
-local conform = require("conform")
+
+-- Which Key
+vim.keymap.set("n", "<leader>?", function() require("which-key").show({ global = false }) end,
+  { desc = "Buffer Local Keymaps (which-key)", unpack(opts) })
+
+-- Yazi
+vim.keymap.set({ "n", "v" }, "<leader>ee", "<cmd>Yazi<cr>", { desc = "Open yazi at the current file", unpack(opts) })
+vim.keymap.set({ "n", "v" }, "<leader>ew", "<cmd>Yazi cwd<cr>",
+  { desc = "Open the file manager in nvim's working directory", unpack(opts) })
+
+-- See `:help telescope.builtin`
+-- local builtin = require("telescope.builtin")
+--
+-- vim.keymap.set( "n", "<leader>cr", builtin.lsp_references, { desc = "[c]ode [r]eferences", noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[f]ind H[e]lp", noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[f]ind [K]eymaps", noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind [F]iles" })
+-- vim.keymap.set("n", "<leader>fG", builtin.git_files, { desc = "[f]ind [G]it files" })
+-- vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "[s]earch [c]urrent word" })
+-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[f]ind by [G]rep" })
+-- vim.keymap.set("n", "<leader>cd", builtin.diagnostics, { desc = "[c]ode [d]iagnostics" })
+-- vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[f]ind [R]esume" })
+-- vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
+-- vim.keymap.set("n", "<leader>f<leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+-- vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "[f]ind [s]ymbols in File" })
+-- vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, { desc = "[f]ind [S]ymbols in Workspace" })
+-- vim.keymap.set("n", "<leader>f/", function()
+--   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+--   builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+--     winblend = 10,
+--     previewer = false,
+--   }))
+-- end, { desc = "[/] Fuzzily search in current buffer" })
+
+-- It's also possible to pass additional configuration options.
+--  See `:help telescope.builtin.live_grep()` for information about particular keys
+vim.keymap.set("n", "<leader>sl",
+  function() builtin.live_grep({ grep_open_files = true, prompt_title = "Live Grep in Open Files", }) end,
+  { desc = "[S]earch [/] in Open Files" })
+
+-- Shortcut for searching your Neovim configuration files
+vim.keymap.set("n", "<leader>sn", function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end,
+  { desc = "[s]earch [n]eoVim files" })
+
+-- END TELESCOPE
 
 vim.keymap.set("i", "<C-h>", "<C-w>", { desc = "Delete previous word", unpack(opts) })
 vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete previous word", unpack(opts) })
@@ -80,10 +124,10 @@ vim.keymap.set(
   { desc = "[C]hange working [D]irectory to the location of the current file", unpack(opts) }
 )
 
-vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move line down", unpack(opts) }) -- Move line down
-vim.keymap.set("n", "<A-k>", "<CMD>m .-2<CR>==", { desc = "Move line up", unpack(opts) }) -- Move line up
+vim.keymap.set("n", "<A-j>", "<CMD>m .+1<CR>==", { desc = "Move line down", unpack(opts) })      -- Move line down
+vim.keymap.set("n", "<A-k>", "<CMD>m .-2<CR>==", { desc = "Move line up", unpack(opts) })        -- Move line up
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", unpack(opts) }) -- Move selection down
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", unpack(opts) }) -- Move selection up
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", unpack(opts) })   -- Move selection up
 
 vim.keymap.set("t", "<ESC><ESC>", "<cmd>x<cr>", { desc = "Exit terminal", unpack(opts) })
 

@@ -1,0 +1,39 @@
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == "nvim-treesitter" and kind == "update" then
+      if not ev.data.active then
+        vim.cmd.packadd("nvim-treesitter")
+      end
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
+
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+
+require("nvim-treesitter").install({
+  "bash",
+  "c",
+  "diff",
+  "html",
+  "lua",
+  "luadoc",
+  "markdown",
+  "markdown_inline",
+  "query",
+  "vim",
+  "vimdoc",
+  "yaml",
+  "python",
+  "html",
+  "go",
+  "rust",
+  "cpp",
+  "powershell",
+  "c_sharp",
+  "json",
+  "javascript",
+  "typescript",
+  "zig",
+})

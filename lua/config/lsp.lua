@@ -15,11 +15,11 @@ vim.diagnostic.config({
     },
   },
   --  virtual_lines = true,
-  virtual_text = false,
+  virtual_text = true,
   underline = false,
   -- Enable underline for diagnostics
   update_in_insert = false, -- Update diagnostics in insert mode
-  severity_sort = true, -- sort diagnostics by severity
+  severity_sort = true,     -- sort diagnostics by severity
 })
 
 _G.floating_options = {

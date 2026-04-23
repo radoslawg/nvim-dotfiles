@@ -1,19 +1,5 @@
--- Powerful formatting plugin for Neovim that provides a consistent interface
--- for running various external formatters (like stylua, goimports, black, prettier).
--- It supports asynchronous formatting, format-on-save, and per-language configuration.
-return {
-  "stevearc/conform.nvim",
-  keys = {
-    {
-      "<leader>f",
-      function()
-        require("conform").format({ async = true, lsp_format = "fallback" })
-      end,
-      mode = "",
-      desc = "[f]ormat buffer",
-    },
-  },
-  opts = {
+require("conform").setup( 
+{
     formatters = {
       stylua = {
         command = "stylua",
@@ -44,5 +30,5 @@ return {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
-  },
-}
+  }
+)

@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.g.loaded_netrwPlugin = 1
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
@@ -92,7 +95,7 @@ vim.opt.timeoutlen = 300 -- 300ms. to complete a mapped sequence
 vim.opt.autoread = true -- Auto reload files changed outside of nvim
 vim.opt.autowrite = true -- Auto save before commands like :next and :make
 vim.opt.autowriteall = true -- Auto save when switching buffers or windows
-vim.opt.clipboard = "unnamedplus" -- Use system clipboard
+--vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
 vim.opt.iskeyword:append({ "-", "_" }) -- Treat dash and underscore as part of a word
 

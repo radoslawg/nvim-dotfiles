@@ -1,0 +1,50 @@
+
+-- Telescope
+
+-- vim.api.nvim_create_autocmd("PackChanged", {
+--   callback = function(ev)
+--     local name, kind = ev.data.spec.name, ev.data.kind
+--     if name == "telescope-fzf-native" and (kind == "install" or kind == "update") then
+--       vim.system({ "make" }, { cwd = ev.data.path })
+--     end
+--   end,
+-- })
+--
+-- vim.pack.add({
+--   { src = "https://github.com/nvim-telescope/telescope.nvim", version = "master" },
+--   "https://github.com/nvim-lua/plenary.nvim",
+--   "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+--   "https://github.com/nvim-telescope/telescope-ui-select.nvim",
+--   "https://github.com/nvim-tree/nvim-web-devicons",
+-- })
+
+-- require("telescope").setup({
+--   -- You can put your default mappings / updates / etc. in here
+--   --  All the info you're looking for is in `:help telescope.setup()`
+--   --
+--   defaults = {
+--     mappings = {
+--       i = {
+--         ["<c-j>"] = "move_selection_next",
+--         ["<c-k>"] = "move_selection_previous",
+--         ["<c-l>"] = "select_default",
+--         ["<esc>"] = "close",
+--       },
+--     },
+--   },
+--   pickers = {
+--     find_files = {
+--       file_ignore_patterns = { "node_modules", ".git", ".venv", ".stfolder" },
+--       hidden = true,
+--     },
+--   },
+--   live_grep = {
+--     file_ignore_patterns = { "node_modules", ".git", ".venv", ".stfolder" },
+--     additional_args = { "--hidden" },
+--   },
+-- })
+--
+-- -- Enable Telescope extensions if they are installed
+-- pcall(require("telescope").load_extension, "fzf")
+-- pcall(require("telescope").load_extension, "ui-select")
+--
