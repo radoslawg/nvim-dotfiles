@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local map = vim.keymap.set
 
 -- Which Key
 vim.keymap.set("n", "<leader>?", function() require("which-key").show({ global = false }) end,
@@ -8,6 +9,7 @@ vim.keymap.set("n", "<leader>?", function() require("which-key").show({ global =
 vim.keymap.set({ "n", "v" }, "<leader>ee", "<cmd>Yazi<cr>", { desc = "Open yazi at the current file", unpack(opts) })
 vim.keymap.set({ "n", "v" }, "<leader>ew", "<cmd>Yazi cwd<cr>",
   { desc = "Open the file manager in nvim's working directory", unpack(opts) })
+
 
 -- See `:help telescope.builtin`
 -- local builtin = require("telescope.builtin")
