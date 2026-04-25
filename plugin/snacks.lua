@@ -28,6 +28,8 @@ map("n", "<leader>f.", s_picker.recent, { desc = "[f]ind recent files[.]", unpac
 map("n", "<leader>cd", s_picker.diagnostics, { desc = "[c]ode [d]iagnostics", unpack(opts) })
 map("n", "<leader>f/", s_picker.grep_buffers, { desc = "[f]ind by grep in [b]buffers", unpack(opts) })
 map("n", "<leader>eE", s_picker.explorer, { desc = "Snack's [eE]xplorer", unpack(opts) })
+map("n", "<leader>fk", s_picker.keymaps, { desc = "[f]ind [k]eymaps", unpack(opts) })
+map("n", "<leader>cr", s_picker.lsp_references, { desc = "[c]ode [r]eferences", unpack(opts) })
 
 -- zen
 

@@ -8,11 +8,24 @@ vim.pack.add({ "https://github.com/nvim-tree/nvim-web-devicons" })
 vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("nvim.undotree")
 --
--- Colorscheme
-vim.pack.add({ "https://github.com/rose-pine/neovim" })
+-- Colorschemes
+vim.pack.add({ "https://github.com/rose-pine/neovim",
+  "https://github.com/reobin/olive-crt.nvim",
+  "https://github.com/metalelf0/black-metal-theme-neovim",
+  "https://github.com/vague-theme/vague.nvim" })
+
+require("black-metal").setup({
+  -----MAIN OPTIONS-----
+  --
+  -- Can be one of: bathory | burzum | dark-funeral | darkthrone | emperor | gorgoroth | immortal | impaled-nazarene | khold | marduk | mayhem | nile | taake | thyrfing | venom | windir
+  theme = "dark-funeral",
+  -- Can be one of: 'light' | 'dark', or set via vim.o.background
+  variant = "dark",
+  --  transparent = true,
+})
 
 -- Provides a status line component that shows the progress of LSP actions.
-vim.pack.add({ "https://github.com/j-hui/fidget.nvim", })
+vim.pack.add({ "https://github.com/j-hui/fidget.nvim" })
 require("fidget").setup({})
 -- Yazi
 vim.pack.add({ "https://github.com/mikavilpas/yazi.nvim" })
@@ -27,20 +40,18 @@ vim.pack.add({
   "https://github.com/L3MON4D3/LuaSnip",
   "https://github.com/rafamadriz/friendly-snippets",
 })
-
 -- Conform
 vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
-
 -- Mini
 vim.pack.add({
   "https://github.com/nvim-mini/mini.ai",
   "https://github.com/nvim-mini/mini.comment",
   "https://github.com/nvim-mini/mini.surround",
-  "https://github.com/nvim-mini/mini.pairs",
+  --  "https://github.com/nvim-mini/mini.pairs",
 })
 require("mini.ai").setup()
 require("mini.surround").setup()
-require("mini.pairs").setup()
+--require("mini.pairs").setup()
 require("mini.comment").setup({
   -- Module mappings. Use `''` (empty string) to disable one.
   mappings = {
