@@ -95,7 +95,7 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lspconfig": {
-      "rev": "81878de76c0de4ce289513734ad80c31ec7871b8",
+      "rev": "21db1fd40cbcbf1524ae154ab8f394fdf085749a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -119,11 +119,11 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "d67113f11384c0dad96fced2f7b91f1fc811e97f",
+      "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
-      "rev": "2497c7b2a61d4eb5dad716371a64ea82fb068bee",
+      "rev": "28735a0b0532e4c8cac420797f3d90e83e00a3bf",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "smear-cursor.nvim": {
@@ -147,7 +147,7 @@
       "src": "https://github.com/folke/which-key.nvim"
     },
     "yazi.nvim": {
-      "rev": "3ef2cd509e8b44bb4436e78834007f6342c7aaa5",
+      "rev": "66377c78e430b51e29fcdaba7f2fd1b4ab3a2007",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }
