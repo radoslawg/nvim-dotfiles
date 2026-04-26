@@ -1,3 +1,4 @@
+vim.o.background = "dark"
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.loaded_netrwPlugin = 1
@@ -14,16 +15,16 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
-vim.opt.tabstop = 2 -- Number of spaces tabs count for
-vim.opt.softtabstop = 2 -- Number of spaces a <Tab> counts for while performing editing operations
+vim.opt.expandtab = true      -- Use spaces instead of tabs
+vim.opt.shiftwidth = 2        -- Number of spaces to use for each step of (auto)indent
+vim.opt.tabstop = 2           -- Number of spaces tabs count for
+vim.opt.softtabstop = 2       -- Number of spaces a <Tab> counts for while performing editing operations
 
-vim.opt.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
-vim.opt.smartindent = true -- Makes indenting smart
-vim.opt.autoindent = true -- Copy indent from current line when starting a new line
+vim.opt.smarttab = true       -- Makes tabbing smarter will realize you have 2 vs 4
+vim.opt.smartindent = true    -- Makes indenting smart
+vim.opt.autoindent = true     -- Copy indent from current line when starting a new line
 
-vim.opt.number = true -- Show line numbers
+vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 
 -- Show which line your c -- Highlight the current lineursor is on
@@ -65,10 +66,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
 
-vim.opt.autochdir = false -- For whatever reason, it makes neovim startup slower
+vim.opt.autochdir = false    -- For whatever reason, it makes neovim startup slower
 
-vim.opt.winblend = 10 -- Transparency for floating windows_color
-vim.opt.pumblend = 5 -- Transparency for popup menu
+vim.opt.winblend = 10        -- Transparency for floating windows_color
+vim.opt.pumblend = 5         -- Transparency for popup menu
 
 local backupdir = vim.fn.expand("~/.vim/backup/")
 local undodir = vim.fn.expand("~/.vim/undo/")
@@ -83,23 +84,23 @@ if vim.fn.isdirectory(backupdir) == 0 then
   vim.fn.mkdir(backupdir, "p")
 end
 
-vim.opt.backup = true -- Enable backup filesystem
+vim.opt.backup = true                              -- Enable backup filesystem
 vim.opt.backupdir = vim.fn.expand("~/.vim/backup") -- Set backup directory
-vim.opt.undofile = true -- Enable persistent undo
-vim.opt.undodir = vim.fn.expand("~/.vim/undo") -- Set undo directory
-vim.opt.swapfile = false -- Disable swapfile
-vim.opt.directory = vim.fn.expand("~/.vim/swap") -- Set swap directory
+vim.opt.undofile = true                            -- Enable persistent undo
+vim.opt.undodir = vim.fn.expand("~/.vim/undo")     -- Set undo directory
+vim.opt.swapfile = false                           -- Disable swapfile
+vim.opt.directory = vim.fn.expand("~/.vim/swap")   -- Set swap directory
 
-vim.opt.updatetime = 250 -- Faster completion_item
-vim.opt.timeoutlen = 300 -- 300ms. to complete a mapped sequence
-vim.opt.autoread = true -- Auto reload files changed outside of nvim
-vim.opt.autowrite = true -- Auto save before commands like :next and :make
-vim.opt.autowriteall = true -- Auto save when switching buffers or windows
+vim.opt.updatetime = 250                           -- Faster completion_item
+vim.opt.timeoutlen = 300                           -- 300ms. to complete a mapped sequence
+vim.opt.autoread = true                            -- Auto reload files changed outside of nvim
+vim.opt.autowrite = true                           -- Auto save before commands like :next and :make
+vim.opt.autowriteall = true                        -- Auto save when switching buffers or windows
 --vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
 vim.opt.iskeyword:append({ "-", "_" }) -- Treat dash and underscore as part of a word
 
-vim.opt.winborder = "rounded" -- Use rounded borders for windows
+vim.opt.winborder = "rounded"          -- Use rounded borders for windows
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
   desc = "Auto save when leaving a buffer or when neovim loses focus",
