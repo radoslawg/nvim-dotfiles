@@ -24,5 +24,7 @@ vim.keymap.set("n",
   end,
   { desc = "Hover Action", silent = true, buffer = bufnr }
 )
+vim.g.cargo_test_runner = '!'
+	    -- let g:cargo_shell_command_runner = '!'
 
 vim.opt_local.colorcolumn = "100"
