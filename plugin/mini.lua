@@ -3,13 +3,11 @@ vim.pack.add({
   "https://github.com/nvim-mini/mini.ai",
   "https://github.com/nvim-mini/mini.comment",
   "https://github.com/nvim-mini/mini.surround",
-  "https://github.com/nvim-mini/mini.pairs",
   "https://github.com/nvim-mini/mini.align",
 })
 
 require("mini.ai").setup()
 require("mini.surround").setup()
-require("mini.pairs").setup()
 require("mini.align").setup()
 require("mini.comment").setup({
   -- Module mappings. Use `''` (empty string) to disable one.

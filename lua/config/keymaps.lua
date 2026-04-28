@@ -60,10 +60,10 @@ vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save file", unpack(opts
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', { desc = "Delete single character without copying into register", unpack(opts) })
 
-vim.keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open new tab", unpack(opts) })
-vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab", unpack(opts) })
-vim.keymap.set("n", "<leader>tn", "<CMD>tabn<CR>", { desc = "Switch to next tab", unpack(opts) })
-vim.keymap.set("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "Switch to previous tab", unpack(opts) })
+-- vim.keymap.set("n", "<leader>to", "<CMD>tabnew<CR>", { desc = "Open new tab", unpack(opts) })
+-- vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab", unpack(opts) })
+-- vim.keymap.set("n", "<leader>tn", "<CMD>tabn<CR>", { desc = "Switch to next tab", unpack(opts) })
+-- vim.keymap.set("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "Switch to previous tab", unpack(opts) })
 
 --Buffer Navigation
 vim.keymap.set("n", "<Tab>", "<CMD>bnext<CR>", { desc = "Next buffer", unpack(opts) })
