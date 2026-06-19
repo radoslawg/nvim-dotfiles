@@ -33,6 +33,7 @@ require("nvim-treesitter").install({
   "powershell",
   "c_sharp",
   "json",
+  "hjson",
   "javascript",
   "typescript",
   "zig",
