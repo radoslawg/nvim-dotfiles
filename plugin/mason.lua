@@ -18,24 +18,24 @@ require("mason").setup({
   },
 })
 
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "lua_ls",
-    "rust_analyzer",
-    "html",
-    "cssls",
-    "eslint",
-    "astro",
-    "bashls",
-    "ts_ls",
-    "csharp_ls",
-    "yamlls",
-    "markdown_oxide",
-    "pylsp",
-    "gopls",
-
-    -- for some reason those have to be installed explicitely with MasonInstall
-    --    "roslyn",
-    --    "netcoredbg",
-  },
-})
+-- require("mason-lspconfig").setup({
+--   ensure_installed = {
+--     "lua_ls",
+--     -- "rust_analyzer",
+--     "html",
+--     "cssls",
+--     "eslint",
+--     "astro",
+--     "bashls",
+--     "ts_ls",
+--     "csharp_ls",
+--     "yamlls",
+--     "markdown_oxide",
+--     "pylsp",
+--     "gopls",
+--
+--     -- for some reason those have to be installed explicitely with MasonInstall
+--     --    "roslyn",
+--     --    "netcoredbg",
+--   },
+-- })

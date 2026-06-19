@@ -1,8 +1,9 @@
 local bufnr = vim.api.nvim_get_current_buf()
+
 vim.keymap.set("n", "<leader>ca", function()
   vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping
   -- or vim.lsp.buf.codeAction() if you don't want grouping.
-end, { desc = "code [a]ction", silent = true, buffer = bufnr })
+end, { desc = "[c]ode [a]ction", silent = true, buffer = bufnr })
 vim.keymap.set("n", "<leader>cE", function()
   vim.cmd.RustLsp("explainError")
 end, { desc = "[E]xplain error(cycle)", silent = true, buffer = bufnr })
@@ -25,6 +26,5 @@ vim.keymap.set("n",
   { desc = "Hover Action", silent = true, buffer = bufnr }
 )
 vim.g.cargo_test_runner = '!'
-	    -- let g:cargo_shell_command_runner = '!'
 
-vim.opt_local.colorcolumn = "100"
+vim.opt_local.colorcolumn = "120"

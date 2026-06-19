@@ -11,18 +11,23 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.INFO] = " ",
     },
   },
-  --  virtual_lines = true,
+  virtual_lines = false,
   virtual_text = true,
   underline = true,               -- Enable underline for diagnostics
   update_in_insert = false,       -- Update diagnostics in insert mode
   severity_sort = true,           -- sort diagnostics by severity
   jump = { float = true },
-  float = { source = 'if_many' }, -- Show source in floating diagnostics if there are multiple sources
+  float = { 
+    source = 'if_many',
+    border = 'rounded', 
+    focusable = false
+  }, -- Show source in floating diagnostics if there are multiple sources 
 })
 
 _G.floating_options = {
-  focusable = true,
+  focusable = false,
   focus = false,
   max_height = 50,
-  max_width = 150,
+  max_width = 180,
+  border = "rounded",
 }
