@@ -11,22 +11,6 @@ vim.cmd.packadd("nvim.difftool")
 vim.cmd.packadd("nvim.undotree")
 --
 -- Colorschemes
-vim.pack.add({ "https://github.com/rose-pine/neovim",
-  "https://github.com/reobin/olive-crt.nvim",
-  "https://github.com/metalelf0/black-metal-theme-neovim",
-  "https://github.com/vague-theme/vague.nvim" })
-
-require("black-metal").setup({
-  -----MAIN OPTIONS-----
-  --
-  -- Can be one of: bathory | burzum | dark-funeral | darkthrone | emperor | gorgoroth | immortal | impaled-nazarene | khold | marduk | mayhem | nile | taake | thyrfing | venom | windir
-  theme = "dark-funeral",
-  -- Can be one of: 'light' | 'dark', or set via vim.o.background
-  variant = "dark",
-  transparent = true,
-})
-require("black-metal").load()
--- vim.cmd("colorscheme bathory")
 
 -- Provides a status line component that shows the progress of LSP actions.
 vim.pack.add({ "https://github.com/j-hui/fidget.nvim" })
@@ -48,7 +32,4 @@ vim.pack.add({
 -- Conform
 vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 
--- vim.pack.add({ { src = "https://github.com/mrcjkb/rustaceanvim", version = vim.version.range("*") } })
-
 require("config.keymaps")
---vim.pack.update(nil, { force = true })
