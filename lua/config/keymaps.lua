@@ -1,6 +1,20 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
+if vim.g.neovide then
+  vim.g.neovide_opacity = 0.95
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_scroll_animation_length = 0.3
+  vim.g.neovide_hide_mouse_when_typing = true
+  vim.g.neovide_underline_automatic_scaling = true
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+
+  vim.keymap.set("n", "<S-Insert>", '"+p', opts)
+  vim.keymap.set("v", "<S-Insert>", '"+p', opts)
+  vim.keymap.set("n", "<S-C>", '"+y', opts)
+end
+
 vim.keymap.set("n", "<leader>fP", "<cmd>ProjectExplorer<cr>", { desc = "Project Explorer", unpack(opts) })
 -- Which Key
 vim.keymap.set("n", "<leader>?", function() require("which-key").show({ global = false }) end,
