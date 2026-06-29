@@ -38,7 +38,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "029a162a6671fdd453001fc1bca047ee3ecd5481",
+      "rev": "39da6060d53659acf3ec118200bc48721b29b8fd",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -70,7 +70,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.ai": {
-      "rev": "d73c36349aa7b0bab5f77ad71701a1d42211a1df",
+      "rev": "cb20f298ebf5ae91924cd0c6c310712de2ef4086",
       "src": "https://github.com/nvim-mini/mini.ai"
     },
     "mini.align": {
@@ -145,6 +145,10 @@
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "project-explorer.nvim": {
+      "rev": "efecf747c5bc6c4fc5ed8488ccee62b56367fcd6",
+      "src": "https://github.com/Rics-Dev/project-explorer.nvim"
+    },
     "project.nvim": {
       "rev": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb",
       "src": "https://github.com/ahmedkhalf/project.nvim"
@@ -165,6 +169,10 @@
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "427b576c16792edad01a92b89721d923c19ad60f",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "tiny-inline-diagnostic.nvim": {
       "rev": "e930d0a46031645040d5492595b46cdf6ab3514f",
@@ -187,7 +195,7 @@
       "src": "https://github.com/folke/which-key.nvim"
     },
     "yazi.nvim": {
-      "rev": "3bc8832ff09534c697ca9846f77fa5647aa189e7",
+      "rev": "36e634c807ab2bef81685a7cd107a107e67e0900",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }
