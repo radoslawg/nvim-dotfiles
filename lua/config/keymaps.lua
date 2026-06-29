@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
+vim.keymap.set("n", "<leader>fP", "<cmd>ProjectExplorer<cr>", { desc = "Project Explorer", unpack(opts) })
 -- Which Key
 vim.keymap.set("n", "<leader>?", function() require("which-key").show({ global = false }) end,
   { desc = "Buffer Local Keymaps (which-key)", unpack(opts) })
